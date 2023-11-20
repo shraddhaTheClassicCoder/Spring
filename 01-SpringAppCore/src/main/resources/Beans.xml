@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Define your beans here -->
+	<bean id="credit" class="com.citi.controller.CreditCard" />
+
+	<bean id="debit" class="com.citi.controller.DebitCard" />
+	<bean id="payment" class="com.citi.controller.PaymentProcess">
+		<!--Setter Injection-->
+		<property name="pay" ref="credit">
+		</property>
+		
+   <!--Constructor Injection-->
+   <constructor-arg name="pay" ref="debit"></constructor-arg>
+	</bean>
+
+   	
+</beans>
