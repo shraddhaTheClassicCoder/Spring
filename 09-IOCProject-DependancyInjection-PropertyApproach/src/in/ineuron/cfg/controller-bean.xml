@@ -11,7 +11,7 @@
 	<import resource="service-bean.xml"/>
 	<!-- Constructor Injection in controller Layer -->
 	<bean id="customerController"
-		class="in.ineuron.controller.MyController">
+		class="in.ineuron.controller.MyController" scope="singleton">
 		<constructor-arg name="service" ref="customerService" />
 
 	</bean>

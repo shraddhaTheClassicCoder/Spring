@@ -12,7 +12,7 @@
     <import resource="persistance.xml"/>
 	<!-- Constructor Injection in service Layer -->
 	<bean id="customerService"
-		class="in.ineuron.service.ICustomerServiceImpl">
+		class="in.ineuron.service.ICustomerServiceImpl" scope="singleton">
 		<constructor-arg name="dao" ref="customerDao" />
 	</bean>
 
