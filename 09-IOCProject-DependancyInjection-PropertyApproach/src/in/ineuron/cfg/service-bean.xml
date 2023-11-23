@@ -8,8 +8,13 @@
         https://www.springframework.org/schema/context/spring-context.xsd">
 
 
-	<import resource="controller-bean.xml"/>
-	<import resource="service-bean.xml"/>
-	<import resource="persistance.xml"/>
+
+    <import resource="persistance.xml"/>
+	<!-- Constructor Injection in service Layer -->
+	<bean id="customerService"
+		class="in.ineuron.service.ICustomerServiceImpl">
+		<constructor-arg name="dao" ref="customerDao" />
+	</bean>
+
 	
 </beans>
