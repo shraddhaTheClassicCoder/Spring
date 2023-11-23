@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- In constructor injection, all params must participate in injection process
+otherwise it would result in "Exception".
+If constructor param type is object/reference type and we are not ready with value
+then we can go for null injection.
+This is very handy(useful) when we are working with predeifned classes as a spring
+bean, that is a spring bean will have limited no of
+Overloaded constructors and no setter injection support is available.
+
+syntax: <constructor-arg name=''><null/></constructor-arg> -->
+
+	<bean id="person" class="in.ineuron.comp.PersonInfo">
+		<constructor-arg name="pid" value="10" />
+		<constructor-arg name="pname" value="sara" />
+		<constructor-arg name="paddrss" value="pune" />
+
+		<constructor-arg name="dob" ref="dobObj" />
+		<constructor-arg name="doj">
+			<null />
+		</constructor-arg>
+		<constructor-arg name="dom">
+			<null />
+		</constructor-arg>
+	</bean>
+
+	<bean id="dobObj" class="java.util.Date">
+     <constructor-arg name="year" value="1989"/>
+     <constructor-arg name="month" value="10"/>
+     <constructor-arg name="date" value="23"/>
+    </bean>
+
+</beans>
