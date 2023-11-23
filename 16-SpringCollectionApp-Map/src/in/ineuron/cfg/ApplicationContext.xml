@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<bean id="sysDate" class="java.util.Date"/>
+	<bean id="dob" class="java.util.Date">
+	<property name="year" value="1989"/>
+	<property name="month" value="10"/>
+	<property name="date" value="23"/>
+	</bean>
+	
+	<bean id="contact" class="in.ineuron.comp.ContactInfo">
+		<property name="phoneNumber">
+			<set>
+				<value>999999999</value>
+				<value>888888888</value>
+				<value>777777777</value>
+			</set>
+       </property>
+       
+       <property name="dateList">
+       <set>
+       <ref bean="sysDate"/>
+       <ref bean="dob"/>
+       </set>
+       
+       </property>
+
+	</bean>
+</beans>

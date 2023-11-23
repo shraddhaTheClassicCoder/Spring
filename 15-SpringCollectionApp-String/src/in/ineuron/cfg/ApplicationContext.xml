@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<bean id="sysDate" class="java.util.Date"/>
+	<bean id="dob" class="java.util.Date">
+	<property name="year" value="1989"/>
+	<property name="month" value="10"/>
+	<property name="date" value="23"/>
+	</bean>
+	
+	<bean id="clg" class="in.ineuron.comp.College">
+		<property name="studentName">
+			<list>
+				<value>shraddha</value>
+				<value>Nitesh</value>
+				<value>Sawant</value>
+			</list>
+       </property>
+       
+       <property name="dateList">
+       <list>
+       <ref bean="sysDate"/>
+       <ref bean="dob"/>
+       </list>
+       
+       </property>
+
+	</bean>
+</beans>

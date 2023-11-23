@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<bean id="sysDate" class="java.util.Date"/>
+	<bean id="dob" class="java.util.Date">
+	<property name="year" value="1989"/>
+	<property name="month" value="10"/>
+	<property name="date" value="23"/>
+	</bean>
+	
+	<bean id="uInfo" class="in.ineuron.comp.UniversityInfo">
+		<property name="facultyInfo">
+			<map>
+				<entry>
+				<key>
+				<value>10</value>
+				</key>
+				<value>sara</value>
+				</entry>
+				<entry key="11" value="gautami"></entry>
+				<entry key="12" value="namita"></entry>
+			</map>
+       </property>
+       
+       <property name="dateInfo">
+       <map>
+       <entry>
+       <key>
+       <value>toDay</value>
+       
+       </key>
+       <ref bean="sysDate"/>
+       </entry>
+       <entry key="dob" value-ref="dob"/>
+       
+       </map>
+       
+       </property>
+
+	</bean>
+</beans>
