@@ -27,6 +27,9 @@ public class constructorInjectionApplicationContext {
 		FlipKart flipKrt = context.getBean("fKart", FlipKart.class);
 		System.out.println(flipKrt);
 
+		String status = flipKrt.doShopping(new String[] { "fossil", "tissot" }, new float[] { 234.34f, 345.45f });
+
+		System.out.println(status);
 		// Closing container
 		System.out.println("***********ApplicationContext container closing************");
 
