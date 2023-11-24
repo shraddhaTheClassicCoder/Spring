@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<bean id="firstYear" class="in.ineuron.comp.EngCourses"
+		abstract="true">
+		<constructor-arg name="subjects">
+			<set>
+				<value>Math</value>
+				<value>CAD</value>
+				<value>C++</value>
+			</set>
+		</constructor-arg>
+	</bean>
+
+	<bean id="CS" class="in.ineuron.comp.EngCourses"
+		parent="firstYear">
+		<constructor-arg name="subjects">
+			<set merge="true">
+				<value>M1</value>
+				<value>M2</value>
+				<value>M3</value>
+			</set>
+		</constructor-arg>
+	</bean>
+
+
+</beans>
+
