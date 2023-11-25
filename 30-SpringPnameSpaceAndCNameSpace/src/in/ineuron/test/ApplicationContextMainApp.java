@@ -6,10 +6,11 @@ import java.util.Arrays;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import in.ineuron.comp.FlipKart;
+
+import in.ineuron.comp.Employee;
 
 @SuppressWarnings("deprecation")
-public class constructorInjectionApplicationContext {
+public class ApplicationContextMainApp {
 
 	public static void main(String[] args) throws IOException {
 		// Activate the container
@@ -25,12 +26,10 @@ public class constructorInjectionApplicationContext {
 		System.in.read();
 
 		// Getting bean from container
-		FlipKart flipKrt = context.getBean("fKart", FlipKart.class);
-		System.out.println(flipKrt);
+		Employee emp = context.getBean("emp", Employee.class);
+		System.out.println(emp);
 
-		String status = flipKrt.doShopping(new String[] { "fossil", "tissot" }, new float[] { 234.34f, 345.45f });
-
-		System.out.println(status);
+		
 		// Closing container
 		System.out.println("***********ApplicationContext container closing************");
 		
